@@ -12,6 +12,10 @@ def findelf(file):
         else:
             # print(line)
             elf = elf + int(line)
-    print(max(elves))
+    elvessorted = sorted(elves, reverse=True)
+    top3elves = elvessorted[0]+elvessorted[1]+elvessorted[2]
+    return elvessorted[0], top3elves
     
-findelf("day1/input.txt")
+top1, top3 = findelf("day1/input.txt")
+print("Total calories first elf is carrying: " + str(top1))
+print("Total calories top3 elves are carrying: " + str(top3))
