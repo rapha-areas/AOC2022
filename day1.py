@@ -1,6 +1,7 @@
 def findelf(file):
     f = open(file, "r")
     lines = f.read().splitlines()
+    f.close()
     elves = []
     elf = 0
     # print(lines)
@@ -17,5 +18,5 @@ def findelf(file):
     return elvessorted[0], top3elves
     
 top1, top3 = findelf("day1/input.txt")
-print("Total calories first elf is carrying: " + str(top1))
+print("Total calories top1 elf is carrying: " + str(top1))
 print("Total calories top3 elves are carrying: " + str(top3))
